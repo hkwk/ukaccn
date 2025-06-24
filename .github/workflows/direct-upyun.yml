@@ -40,15 +40,15 @@ jobs:
           submodules: recursive
       - name: MV DIR
         run: |
-          mkdir ${{ runner.temp }}/${TMP_DIR}
-          rsync -av --exclude='.*' --exclude='public' /home/runner/work/jnuer/jnuer ${{ runner.temp }}/${TMP_DIR}
+          mkdir ${{ runner.temp }}/public
+          rsync -av --exclude='.*' --exclude='public' /home/runner/work/jnuer/jnuer ${{ runner.temp }}/public
   # Deployment job
       - name: deploy-to-upyun
         env:
           UPX_SERVICENAME: ${{ secrets.UPX_SERVICENAME }}
           UPX_OPERATOR: ${{ secrets.UPX_OPERATOR }}
           UPX_PASSWORD: ${{ secrets.UPX_PASSWORD }}
-          LOCAL_DIR: ${{ runner.temp }}/${TMP_DIR}
+          LOCAL_DIR: ${{ runner.temp }}/public
           REMOTE_DIR: /
         run: |
           wget https://github.com/upyun/upx/releases/download/v0.4.8/upx_0.4.8_linux_amd64.tar.gz || { echo "Download failed"; exit 1; }
