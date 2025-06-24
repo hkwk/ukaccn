@@ -41,7 +41,7 @@ jobs:
       - name: MV DIR
         run: |
           mkdir ${{ runner.temp }}/public
-          rsync -av --exclude='.*' --exclude='public' /home/runner/work/jnuer/jnuer ${{ runner.temp }}/public
+          rsync -av --exclude='.*' --exclude='public' /home/runner/work/jnuer/jnuer/* ${{ runner.temp }}/public
   # Deployment job
       - name: deploy-to-upyun
         env:
