@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: jnuer.com
+Token: 8dc9a5e7b6b723cc813729f008b4119956079fbd25dcc4eb965ac29c5e8ca412

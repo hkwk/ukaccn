@@ -1,2 +1,2 @@
-# jnuer
-jnuer.com public website
+# jnuer.com
+index - auto publish
